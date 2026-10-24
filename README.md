@@ -1,2 +1,2 @@
-# dm-zen
-Zen is a test harness for DM (dream maker)
+# Zen
+Zen is a test framework for DM (dream maker)
