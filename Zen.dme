@@ -14,6 +14,12 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "Zen.dm"
+#include "Code\Zen.dm"
+#include "Code\ZenResults.dm"
+#include "Code\ZenAssertions.dm"
+#include "Code\ZenUtils.dm"
+#include "Demo\Demo.dm"
+#include "Demo\Types\Person.dm"
+#include "Demo\Types\PersonTest.dm"
 // END_INCLUDE
 
