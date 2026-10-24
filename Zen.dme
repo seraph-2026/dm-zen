@@ -18,6 +18,7 @@
 #include "Code\ZenResults.dm"
 #include "Code\ZenAssertions.dm"
 #include "Code\ZenUtils.dm"
+#include "Code\Assertions\isEquals.dm"
 #include "Demo\Demo.dm"
 #include "Demo\Types\Person.dm"
 #include "Demo\Types\PersonTest.dm"

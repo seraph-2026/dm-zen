@@ -6,5 +6,3 @@ zen/person/test()
 	
 	zen.assertEquals(p.description(), "name: lisa, age: 35")
 
-zen/person/subtest/test()
-	// Stubbed

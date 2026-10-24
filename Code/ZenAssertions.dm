@@ -7,18 +7,8 @@
 
 zen_assertion
 	var
+		assertType
 		result
 	
 	proc/exec() // Overriden by child assertion types
 
-/**
-	Types of assertions with different executions
-**/
-
-zen_assertion/isEquals
-	exec(var/a, var/b)
-		result = a == b
-
-zen/proc/assertEquals()
-	
-		
