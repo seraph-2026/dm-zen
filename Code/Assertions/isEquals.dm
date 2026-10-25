@@ -15,6 +15,8 @@ zen_assertion/isEquals
 zen/proc/assertEquals(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isEquals()
 	thisAssertion.description = description
+	thisAssertion.paramA = a
+	thisAssertion.paramB = b
 
 	// Add to the test this assertion is running in for printing results later
 	currentRunningTest.testResults.assertions += thisAssertion

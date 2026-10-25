@@ -24,13 +24,30 @@ zen_results
 	 * Includes assertions and exceptions
 	 */
 	proc/toString()
+		return  assertionsToString() + "\n" + exceptionsToString()
+	
+	proc/assertionsToString()
 		var/outputString = ""
 
 		for(var/zen_assertion/assertion in src.assertions)
-			var/assertResult = assertion.result ? ZEN_GREEN_TICK : ZEN_RED_X
-			outputString += "\t[assertResult] [assertion.description]"
+			var/assertResult = assertion.result ? ZEN_GREEN_TICK : ZEN_RED_CROSS
+			outputString += "\t\n\t[assertResult] [assertion.description]\n"
+			
+			// If asssertion failed print debugging
+			if(!assertion.result)
+				outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
+				outputString += "\t\t<b>Expected</b>\n\t\t\t[assertion.paramB]\n"
+				outputString += "\t\t<b>Got</b>\n\t\t\t[assertion.paramA]"
 		
+		return outputString
+
+	proc/exceptionsToString()
+		var/outputString = ""
+
 		for(var/exception/e in src.exceptions)
-			outputString += "Exception: [e]"
+			outputString += "\t[ZEN_RED_CROSS] Encountered an exception."
+			outputString += "\n\t\t<b>Type</b> [e.name]\n"
+			outputString += "\t\t<b>File</b> [e.file]\n" + "\t\t<b>Line</b>: [e.line]\n"
+			outputString += "<span>\t\t<b>Description</b>\n\t\t\t[replacetext(e.desc,"\n","\n\t\t\t")]</span>"
 		
 		return outputString

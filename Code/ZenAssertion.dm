@@ -5,9 +5,11 @@
  */
 zen_assertion
 	var
-		assertType
-		result
-		description
+		assertType // isEquals, isNotEquals etc
+		result // 1 or 0, pass or fail
+		description // User provided description of what this assertion is checking
+		paramA // First parameter
+		paramB // Second parameter
 	
 	/**
 	 * Will return the result of the assert as a 0 or 1.
