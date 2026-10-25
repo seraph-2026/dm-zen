@@ -6,6 +6,7 @@
 
 zen_results
 	var
+		pass = TRUE // Default to true unless an assertion fails
 		list/assertions = list()
 		list/exceptions = list()
 	
@@ -25,8 +26,8 @@ zen_results
 		var/outputString = ""
 
 		for(var/zen_assertion/assertion in src.assertions)
-			var/assertResult = assertion ? "true" : "false"
-			outputString += "Assertion: [assertion.assertType] [assertResult]"
+			var/assertResult = assertion ? ZEN_GREEN_TICK : ZEN_RED_X
+			outputString += "\t[assertResult] [assertion.description]"
 		
 		for(var/exception/e in src.exceptions)
 			outputString += "Exception: [e]"

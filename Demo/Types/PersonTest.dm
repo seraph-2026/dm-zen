@@ -4,5 +4,10 @@ zen/person/test()
 	p.name = "lisa"
 	p.age = 35
 	
-	zen.assertEquals(p.description(), "name: lisa, age: 35")
+	zen.assertEquals(
+		"person.description() prints accurately",
+		p.description(), 
+		"name: lisa, age: 35"
+	)
+
 

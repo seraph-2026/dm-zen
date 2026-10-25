@@ -11,8 +11,10 @@ zen
 	proc
 		test() // Overriden by /zen children
 		
-		
-		exec(var/suiteNameOrList)
+		/**
+		 * 
+		 */
+		exec(var/ouputContainer, var/suiteNameOrList)
 
 			var/list/testsToRun = list()
 
@@ -33,4 +35,3 @@ zen
 
 			// Return nicely formatted text results
 			return zen_utils.getFormattedTestResults(testsToRun)
-

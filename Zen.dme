@@ -15,6 +15,7 @@
 
 // BEGIN_INCLUDE
 #include "Code\Zen.dm"
+#include "Code\ZenOutput.dm"
 #include "Code\ZenResults.dm"
 #include "Code\ZenAssertions.dm"
 #include "Code\ZenUtils.dm"

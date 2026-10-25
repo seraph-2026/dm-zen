@@ -9,6 +9,7 @@ zen_assertion
 	var
 		assertType
 		result
+		description
 	
 	proc/exec() // Overriden by child assertion types
 

@@ -69,8 +69,13 @@ zen_utils
 		getFormattedTestResults(var/list/tests)
 			var/resultsText = ""
 
+			resultsText = ZEN_RUNNING_TEST + "\n\n"
+
 			for(var/zen/test in tests)
-				resultsText += "Test name: [copytext("[test.type]", 6)]\n"
-				resultsText += "[test.testResults]"
+				var/passOrFail = test.testResults.pass ? ZEN_PASS : "FAIL"
+				resultsText += "[passOrFail] [copytext("[test.type]", 6)]\n"
+				resultsText += "[test.testResults]\n"
+				resultsText += ZEN_HR
+
 			
 			return resultsText
