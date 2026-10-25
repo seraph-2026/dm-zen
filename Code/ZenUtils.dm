@@ -61,21 +61,22 @@ zen_utils
 					someTest.testResults.exceptions += e
 					world << "[e]"
 				
+				outputTestResults(zenInstance, someTest)
+				
 				zenInstance.currentRunningTest = null
 		
 		/**
 			Will return test results formatted to look pretty
 		**/
-		getFormattedTestResults(var/list/tests)
+		outputTestResults(var/zen/zenInstance, var/zen/someTest)
 			var/resultsText = ""
 
 			resultsText = ZEN_RUNNING_TEST + "\n\n"
 
-			for(var/zen/test in tests)
-				var/passOrFail = test.testResults.pass ? ZEN_PASS : "FAIL"
-				resultsText += "[passOrFail] [copytext("[test.type]", 6)]\n"
-				resultsText += "[test.testResults]\n"
-				resultsText += ZEN_HR
+			var/passOrFail = someTest.testResults.pass ? ZEN_PASS : "FAIL"
+			resultsText += "[passOrFail] [copytext("[someTest.type]", 6)]\n"
+			resultsText += "[someTest.testResults]\n"
+			resultsText += ZEN_HR
 
 			
-			return resultsText
+			zenInstance.outputContainer << resultsText
