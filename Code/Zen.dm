@@ -16,15 +16,21 @@ zen
 	proc
 		test() // Overriden by /zen children
 		
-		/**
-		 * Will run all tests, or optionally a specific test or list of tests
+		/** 
+		 * Discovers and runs all the tests in this project automatically
 		 * 
-		 * The first parameter outputContainer will recieve the results livestreamed
-		 * Internally this is done using outputContainer << testResults
+		 * If the parameter outputContainer is specified, test results 
+		 * will be piped to the container like so.
 		 * 
-		 * The second parameter is the test name (text) or list (/list) of test names as text
+		 *     outputContainer << results
+		 * 
+		 * If you want to control the presentation of the test results 
+		 * yourself. Then you can use the return results of this proc.
+		 * 
+		 * The return value is a /list of /zen/\<test\> datums with .testResults
+		 * 
 		 */
-		exec(var/outputContainer, var/testNameOrList)
+		exec(var/outputContainer)
 
 			src.outputContainer = outputContainer
 
@@ -44,6 +50,9 @@ zen
 			
 			// Run tests
 			zen_utils.runTests(zen, testsToRun)
+			
+			// Allows users to control the presentation of the test results manually
+			return testsToRun
 		
 		/**
 		 * Gets a new instance of the object type represented by the mock type
