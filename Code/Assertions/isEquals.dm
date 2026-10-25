@@ -1,9 +1,17 @@
+
+/**
+ * Raw assertion logic
+ */
 zen_assertion/isEquals
 	assertType = "isEquals"
 
 	exec(var/a, var/b)
-		return result = a == b
+		return a == b
 
+/**
+ * Runs the assertion and assigns the result to the currently
+ * running test within the global zen instance.
+ */
 zen/proc/assertEquals(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isEquals()
 	thisAssertion.description = description

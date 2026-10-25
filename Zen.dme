@@ -14,14 +14,16 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "Code\Mock.dm"
 #include "Code\Zen.dm"
 #include "Code\ZenOutput.dm"
+#include "Code\ZenAssertion.dm"
 #include "Code\ZenResults.dm"
-#include "Code\ZenAssertions.dm"
 #include "Code\ZenUtils.dm"
 #include "Code\Assertions\isEquals.dm"
 #include "Demo\Demo.dm"
 #include "Demo\Types\Person.dm"
+#include "Demo\Types\PersonMock.dm"
 #include "Demo\Types\PersonTest.dm"
 // END_INCLUDE
 

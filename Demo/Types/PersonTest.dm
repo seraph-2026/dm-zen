@@ -1,13 +1,24 @@
-zen/person/test()
 
-	var/person/p = new/person()
-	p.name = "lisa"
-	p.age = 35
+zen/person/test()
+	var/person/lisa = zen.mock(/mock/person/Lisa)
+
+	zen.assertEquals(
+		"person.description() prints accurately",
+		lisa.description(), 
+		"name: lisa, age: 35"
+	)
+
+zen/person_fail/test()
+
+	var/person/lisa = zen.mock(/mock/person/Lisa)
 	
 	zen.assertEquals(
 		"person.description() prints accurately",
-		p.description(), 
-		"name: lisa, age: 35"
+		lisa.description(), 
+		"name: lisa, age: 25"
 	)
+
+
+
 
 

@@ -1,6 +1,10 @@
 
 
-// Global singleton zen
+/**
+ * Essentially this operates like a namespace for the zen project
+ * 
+ * It's a global instance of the root /zen datum
+ */
 var/zen/zen = new()
 
 zen
@@ -40,3 +44,10 @@ zen
 			
 			// Run tests
 			zen_utils.runTests(zen, testsToRun)
+		
+		/**
+		 * Gets a new instance of the object type represented by the mock type
+		 */
+		mock(var/someMockType)
+			var/mock/someMock = new someMockType()
+			return someMock.get()
