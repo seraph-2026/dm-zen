@@ -8,7 +8,7 @@ zen/assertion_tests
 		zen.assertEquals("equals 1 1", 1, 1)
 		zen.assertIsArea("isArea new/area()", new/area())
 		zen.assertIsFile("isFile 'Code/zen.dm'", 'Code/zen.dm')
-		zen.assertIsGreaterThan("isGreaterThan 2 1",1,1)
+		zen.assertIsGreaterThan("isGreaterThan 2 1", 2, 1)
 		zen.assertIsGreaterThanOrEquals("greaterThanOrEquals 2 1", 2, 1)
 		zen.assertIsGreaterThanOrEquals("greaterThanOrEquals 2 2", 2, 2)
 		zen.assertIsIcon("isIcon new/icon()", new/icon())
@@ -19,8 +19,8 @@ zen/assertion_tests
 		zen.assertIsLessThanOrEquals("isLessThanOrEquals 1 2", 1, 2)
 		zen.assertIsLessThanOrEquals("isLessThanOrEquals 2 2", 2, 2)
 		zen.assertIsList("isList", list())
-		zen.assertIsLoc("isLoc /mob", new/mob().loc)
-		zen.assertIsLoc("isLoc /obj", new/obj().loc)
+		zen.assertIsLoc("isLoc new/mob()", new/mob())
+		zen.assertIsLoc("isLoc new/obj()", new/obj())
 		zen.assertIsMob("ismob new/mob()", new/mob())
 		zen.assertIsMovable("isMovable new/mob()", new/mob())
 		zen.assertIsMovable("isMovable new/obj()", new/obj())
@@ -39,9 +39,6 @@ zen/assertion_tests
 		var/pointer = &someVar
 		zen.assertIsPointer("isPointer &[someVar]", pointer)
 
-		var/zen_mock_data/mockData = zen.mock(/mock/zen_mock_data)
-
-		zen.assertIsSaved("isSaved mockData.normalVariable", issaved(mockData.normalVariable))
 		zen.assertIsText("isText abc", "abc")
 		zen.assertIsType("isType new/mob() /mob", new/mob(), /mob)
 		zen.assertListContains(@{"listContains list("a","b") "b""}, list("a","b"), "b")

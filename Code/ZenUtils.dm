@@ -72,8 +72,10 @@ zen_utils
 				catch(var/exception/e)
 					someTest.testResults.pass = 0 // Any exception is an automatic fail
 					someTest.testResults.exceptions += e // Store exception for later presentatin
+
+				someTest.testResults.time = startTime - world.time
 				
-				outputTestResults(zenInstance, someTest, startTime, world.time)
+				outputTestResults(zenInstance, someTest, startTime)
 				
 				zenInstance.currentRunningTest = null
 
@@ -86,13 +88,17 @@ zen_utils
 		/**
 		 * Will return individual test results formatted to look pretty
 		 */
-		outputTestResults(var/zen/zenInstance, var/zen/someTest, var/startTime, var/endTime)
+		outputTestResults(var/zen/zenInstance, var/zen/someTest)
 			var/resultsText = ""
 
 			var/passOrFail = someTest.testResults.pass ? ZEN_PASS_TEST : ZEN_FAIL_TEST
 			resultsText += "[passOrFail] [copytext("[someTest.type]", 6)]\n"
-			resultsText += "[someTest.testResults]\n"
-			resultsText += "Completed in [(endTime - startTime) * 10]s\n"
+			resultsText += "[someTest.testResults]"
+
+			// Report time taken to complete if it's not under a tenth of a second
+			if(someTest.testResults.time > 0)
+				resultsText += "\nCompleted in [someTest.testResults.time * 10]s\n"
+
 			resultsText += ZEN_HR
 
 			zenInstance.outputContainer << resultsText
@@ -132,7 +138,7 @@ zen_utils
 			resultsText += "[ZEN_RED_CROSS]<b>Tests Issues</b>\n\n"
 
 			for(var/zen/test in failedTests)
-				resultsText += "[copytext("[test.type]", 6)]"
+				resultsText += "<b>Test</b> [copytext("[test.type]", 6)]\n"
 				resultsText += test.testResults.toString(noPassed = 1)
 
 			resultsText += ZEN_HR
@@ -147,7 +153,7 @@ zen_utils
 				resultsText += "\t[ZEN_GREEN_TICK] [passedTests.len] of [tests.len] passed\n"
 
 			if(failedTests.len > 0)
-				resultsText += "\t[ZEN_RED_CROSS] [failedTests.len] of [tests.len] failed\n\n"
+				resultsText += "\t[ZEN_RED_CROSS] [failedTests.len] of [tests.len] failed\n"
 
 			// Summary assertions
 			resultsText += "\n<b>Assertions</b>\n"
@@ -156,6 +162,6 @@ zen_utils
 			
 			if(totalExceptions > 0)
 				resultsText += "\n<b>Exceptions</b>\n"
-				resultsText += "\t[ZEN_RED_CROSS] [totalExceptions] exceptions\n\n"
+				resultsText += "\t[ZEN_RED_CROSS] [totalExceptions] exceptions\n"
 
 			zenInstance.outputContainer << resultsText

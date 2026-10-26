@@ -1,6 +1,6 @@
 
 zen_mock_data
-	var/normalVariable
+	var/normalVariable = "some text"
 	var/tmp/tempVariable
 
 mock/zen_mock_data

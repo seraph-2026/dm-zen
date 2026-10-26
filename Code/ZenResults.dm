@@ -11,6 +11,7 @@ zen_results
 		list/passedAssertions = list()
 		list/failedAssertions = list()
 		list/exceptions = list()
+		time = 0 // Time taken to complete in deci seconds
 	
 	/**
 	 * Enable automatic toString in world << testResults or "[testResults]"
@@ -27,7 +28,7 @@ zen_results
 	 * If parameter noPassed = 1, it will exclude assertions that passed.
 	 */
 	proc/toString(noPassed = 0)
-		return  assertionsToString(noPassed) + "\n" + exceptionsToString()
+		return  assertionsToString(noPassed) + exceptionsToString()
 	
 	/**
 	 * Return a pretty string representation of the test
@@ -57,7 +58,7 @@ zen_results
 				if(assertion.params == 1)
 					outputString += "\t\t<b>[assertion.aName]</b>\n\t\t\t[assertion.paramA]\n"
 					outputString += "\t\t<b>Result</b>\n\t\t\t[assertion.result]\n"
-		
+			
 		return outputString
 
 	/**
@@ -67,9 +68,9 @@ zen_results
 		var/outputString = ""
 
 		for(var/exception/e in src.exceptions)
-			outputString += "\t[ZEN_RED_CROSS] Encountered an exception."
+			outputString += "\n\t[ZEN_RED_CROSS] Encountered an exception."
 			outputString += "\n\t\t<b>Type</b> [e.name]\n"
 			outputString += "\t\t<b>File</b> [e.file]\n" + "\t\t<b>Line</b>: [e.line]\n"
-			outputString += "<span>\t\t<b>Description</b>\n\t\t\t[replacetext(e.desc,"\n","\n\t\t\t")]</span>"
+			outputString += "\t\t<b>Description</b>\n\t\t\t[replacetext(e.desc,"\n","\n\t\t\t")]"
 		
 		return outputString

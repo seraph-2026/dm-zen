@@ -42,7 +42,6 @@
 #include "Code\Assertions\isObj.dm"
 #include "Code\Assertions\isPath.dm"
 #include "Code\Assertions\isPointer.dm"
-#include "Code\Assertions\isSaved.dm"
 #include "Code\Assertions\isText.dm"
 #include "Code\Assertions\isTrue.dm"
 #include "Code\Assertions\isType.dm"
