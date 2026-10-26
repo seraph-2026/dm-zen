@@ -5,7 +5,7 @@
 zen_assertion/isFile
 	assertType = "isFile"
 	params = 1
-	aName = "Input"
+	aName = "Value"
 
 	result(var/a)
 		return isfile(a)

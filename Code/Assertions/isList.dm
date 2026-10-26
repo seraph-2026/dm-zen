@@ -5,7 +5,7 @@
 zen_assertion/isList
 	assertType = "isList"
 	params = 1
-	aName = "Input"
+	aName = "Value"
 
 	result(var/a)
 		return islist(a)

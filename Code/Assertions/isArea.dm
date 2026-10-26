@@ -5,8 +5,7 @@
 zen_assertion/isArea
 	assertType = "isArea"
 	params = 1
-	aName = "Input"
-
+	aName = "Value"
 
 	result(var/a)
 		return isarea(a)

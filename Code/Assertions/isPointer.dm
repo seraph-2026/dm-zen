@@ -5,7 +5,7 @@
 zen_assertion/isPointer
 	assertType = "isPointer"
 	params = 1
-	aName = "Input"
+	aName = "Value"
 
 	result(var/a)
 		return ispointer(a)

@@ -5,7 +5,7 @@
 zen_assertion/isObj
 	assertType = "isObj"
 	params = 1
-	aName = "Input"
+	aName = "Value"
 
 	result(var/a)
 		return isobj(a)
