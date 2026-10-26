@@ -5,6 +5,8 @@
 zen_assertion/isFalse
 	assertType = "isFalse"
 	params = 1
+	aName = "Input"
+
 
 	result(var/a)
 		return a == 0

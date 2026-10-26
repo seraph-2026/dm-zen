@@ -5,7 +5,8 @@
 zen_assertion/isSaved
 	assertType = "isSaved"
 	params = 1
-
+	aName = "Input"
+	
 	result(var/a)
 		return issaved(a)
 

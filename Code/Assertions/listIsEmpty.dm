@@ -3,8 +3,9 @@
  * Raw assertion logic
  */
 zen_assertion/listIsEmpty
-	assertType = "isEmpty"
+	assertType = "listIsEmpty"
 	params = 1
+	aName = "List"
 
 	result(var/list/a)
 		return a.len == 0

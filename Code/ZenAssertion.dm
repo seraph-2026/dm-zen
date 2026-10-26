@@ -5,6 +5,8 @@
  */
 zen_assertion
 	var/params = 2
+	var/aName
+	var/bName
 
 	/**
 	 * Description: Describes what this assert is checking in human readible terms
@@ -36,12 +38,17 @@ zen_assertion
 	 * Saves the results to the current running test for later presentation.
 	 */
 	proc/exec(var/description, var/a, var/b)
-		// Add to the test this assertion is running in for printing results later
-		zen.currentRunningTest.testResults.assertions += src
 
 		// Calculate the assertion and store results internally
 		src.result = src.result(a, b)
 
 		// If we got a fail result, update overall test result to fail
-		if(!src.result) zen.currentRunningTest.testResults.pass = 0
+		if(!src.result) 
+			zen.currentRunningTest.testResults.pass = 0
+			
+			// Add to the test this assertion is running in for printing results later
+			zen.currentRunningTest.testResults.failedAssertions += src
+		else
+			// Add to the test this assertion is running in for printing results later
+			zen.currentRunningTest.testResults.passedAssertions += src
 

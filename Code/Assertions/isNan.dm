@@ -5,6 +5,7 @@
 zen_assertion/isNan
 	assertType = "isNaN"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return isnan(a)

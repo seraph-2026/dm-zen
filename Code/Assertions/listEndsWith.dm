@@ -5,6 +5,8 @@
 zen_assertion/listEndsWith
 	assertType = "listEndsWith"
 	params = 2
+	aName = "List"
+	bName = "Search item"
 
 	result(var/list/a, var/b)
 		return a[a.len] == b

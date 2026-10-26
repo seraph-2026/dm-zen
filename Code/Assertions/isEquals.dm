@@ -5,9 +5,10 @@
 zen_assertion/isEquals
 	assertType = "isEquals"
 	params = 2
-
+	aName = "Expected"
+	bName = "Actual"
 	result(var/a, var/b)
-		return a == b
+		return a == b 
 
 /**
  * Asserts that a == b

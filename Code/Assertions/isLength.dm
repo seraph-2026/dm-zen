@@ -5,6 +5,7 @@
 zen_assertion/isLength
 	assertType = "isLength"
 	params = 2
+	aName = "Input"
 
 	result(var/a, var/b)
 		return length(a) == b

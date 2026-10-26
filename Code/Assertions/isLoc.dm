@@ -5,6 +5,7 @@
 zen_assertion/isLoc
 	assertType = "isLoc"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return isloc(a)

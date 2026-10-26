@@ -5,6 +5,8 @@
 zen_assertion/textContains
 	assertType = "textContains"
 	params = 2
+	aName = "Text"
+	bName = "Search Text"
 
 	result(var/a, var/b)
 		return findtext(a, b)

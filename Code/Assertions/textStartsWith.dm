@@ -3,11 +3,13 @@
  * Raw assertion logic
  */
 zen_assertion/textStartsWith
-	assertType = "startsWith"
+	assertType = "textStartsWith"
 	params = 2
+	aName = "Text"
+	bName = "Search Text"
 
 	result(var/a, var/b)
-		return copytext(a, 1, length(b)) == b
+		return copytext(a, 1, length(b) + 1) == b
 
 
 /**

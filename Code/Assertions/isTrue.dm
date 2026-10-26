@@ -5,6 +5,7 @@
 zen_assertion/isTrue
 	assertType = "isTrue"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return a == 1

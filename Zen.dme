@@ -49,6 +49,7 @@
 #include "Code\Assertions\listContains.dm"
 #include "Code\Assertions\listEndsWith.dm"
 #include "Code\Assertions\listIsEmpty.dm"
+#include "Code\Assertions\listIsNotEmpty.dm"
 #include "Code\Assertions\listStartsWith.dm"
 #include "Code\Assertions\notContains.dm"
 #include "Code\Assertions\textContains.dm"

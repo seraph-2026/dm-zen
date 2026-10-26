@@ -8,7 +8,8 @@
 zen_results
 	var
 		pass = TRUE // Default to true unless an assertion fails
-		list/assertions = list()
+		list/passedAssertions = list()
+		list/failedAssertions = list()
 		list/exceptions = list()
 	
 	/**
@@ -22,29 +23,46 @@ zen_results
 	 * Return a pretty version of the test results
 	 * 
 	 * Includes assertions and exceptions
+	 * 
+	 * If parameter noPassed = 1, it will exclude assertions that passed.
 	 */
-	proc/toString()
-		return  assertionsToString() + "\n" + exceptionsToString()
+	proc/toString(noPassed = 0)
+		return  assertionsToString(noPassed) + "\n" + exceptionsToString()
 	
-	proc/assertionsToString()
+	/**
+	 * Return a pretty string representation of the test
+	 * 
+	 * If parameter noPassed is 1, then it won't print passed tests.
+	 * This is useful when printing out only what went wrong.
+	 */
+	proc/assertionsToString(noPassed = 0)
 		var/outputString = ""
+		var/totalAssertions = src.passedAssertions + failedAssertions
 
-		for(var/zen_assertion/assertion in src.assertions)
+		for(var/zen_assertion/assertion in totalAssertions)
+
+			// Skip any assertions that passed if noPassed is on
+			if(noPassed && assertion.result) continue
+
 			var/assertResult = assertion.result ? ZEN_GREEN_TICK : ZEN_RED_CROSS
 			outputString += "\t\n\t[assertResult] [assertion.description]\n"
 			
 			// If asssertion failed print debugging
 			if(!assertion.result)
+				outputString += "\t\t<b>Assertion</b>\n\t\t\t[assertion.assertType]\n"
 				if(assertion.params == 2)
-					outputString += "\t\t<b>A</b>\n\t\t\t[assertion.paramA]\n"
-					outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
-					outputString += "\t\t<b>B</b>\n\t\t\t[assertion.paramB]\n"
+					outputString += "\t\t<b>[assertion.aName]</b>\n\t\t\t[assertion.paramA]\n"
+					outputString += "\t\t<b>[assertion.bName]</b>\n\t\t\t[assertion.paramB]\n"
+					outputString += "\t\t<b>Result</b>\n\t\t\t[assertion.result]\n"
 				if(assertion.params == 1)
-					outputString += "\t\t<b>A</b>\n\t\t\t[assertion.paramA]\n"
-					outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
+					outputString += "\t\t<b>[assertion.aName]</b>\n\t\t\t[assertion.paramA]\n"
+					outputString += "\t\t<b>Result</b>\n\t\t\t[assertion.result]\n"
 		
 		return outputString
 
+	/**
+	 * Returns a pretty string of all the exceptions
+	 */
 	proc/exceptionsToString()
 		var/outputString = ""
 

@@ -103,7 +103,20 @@ zen_utils
 		outputTestSummary(var/zen/zenInstance, var/list/tests)
 			var/resultsText = ""
 
+			// Assertion totals
+			var/totalPassedAssertions = 0
+			var/totalFailedAssertions = 0
+			var/totalExceptions = 0
+
+			for(var/zen/test in tests)
+				totalPassedAssertions += test.testResults.passedAssertions.len
+				totalFailedAssertions += test.testResults.failedAssertions.len
+				totalExceptions += test.testResults.exceptions.len
+
+
+			// Overall pass and totals
 			var/pass = 1
+
 			var/list/passedTests = list()
 			var/list/failedTests = list()
 
@@ -115,8 +128,19 @@ zen_utils
 				else
 					passedTests += test
 
+			// Detailed summary failed tests
+			resultsText += "[ZEN_RED_CROSS]<b>Tests Issues</b>\n\n"
+
+			for(var/zen/test in failedTests)
+				resultsText += "[copytext("[test.type]", 6)]"
+				resultsText += test.testResults.toString(noPassed = 1)
+
+			resultsText += ZEN_HR
+
 			var/passOrFail = pass ? ZEN_PASS : ZEN_FAIL
-			resultsText += "<b>Overall Test Result</b> - [passOrFail]\n"
+			resultsText += "\n<b>Overall Test Result</b> - [passOrFail]\n"
+
+			resultsText += "\n<b>Tests</b>\n"
 			
 			// Short summary passed tests
 			if(passedTests.len > 0)
@@ -124,12 +148,14 @@ zen_utils
 
 			if(failedTests.len > 0)
 				resultsText += "\t[ZEN_RED_CROSS] [failedTests.len] of [tests.len] failed\n\n"
-			
-			// Detailed summary failed tests
-			for(var/zen/test in failedTests)
-				resultsText += "[copytext("[test.type]", 6)]"
-				resultsText += test.testResults.toString()
 
-			resultsText += ZEN_HR
+			// Summary assertions
+			resultsText += "\n<b>Assertions</b>\n"
+			resultsText += "\t[ZEN_GREEN_TICK] [totalPassedAssertions] passed\n"
+			resultsText += "\t[ZEN_RED_CROSS] [totalFailedAssertions] failed\n"
+			
+			if(totalExceptions > 0)
+				resultsText += "\n<b>Exceptions</b>\n"
+				resultsText += "\t[ZEN_RED_CROSS] [totalExceptions] exceptions\n\n"
 
 			zenInstance.outputContainer << resultsText

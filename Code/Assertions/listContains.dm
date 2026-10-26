@@ -5,6 +5,8 @@
 zen_assertion/listContains
 	assertType = "listContains"
 	params = 2
+	aName = "List"
+	bName = "Search Item"
 
 	result(var/list/a, var/b)
 		return a.Find(b)

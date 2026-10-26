@@ -5,7 +5,8 @@
 zen_assertion/isIcon
 	assertType = "isIcon"
 	params = 1
-
+	aName = "Input"
+	
 	result(var/a)
 		return isicon(a)
 

@@ -5,6 +5,8 @@
 zen_assertion/isMovable
 	assertType = "isMovable"
 	params = 1
+	aName = "Input"
+
 
 	result(var/a)
 		return ismovable(a)

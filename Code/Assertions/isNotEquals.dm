@@ -5,6 +5,8 @@
 zen_assertion/isNotEquals
 	assertType = "isNotEquals"
 	params = 2
+	aName = "Input A"
+	bName = "Input B"
 
 	result(var/a, var/b)
 		return a != b

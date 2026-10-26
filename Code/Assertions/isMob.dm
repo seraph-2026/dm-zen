@@ -5,6 +5,7 @@
 zen_assertion/isMob
 	assertType = "isMob"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return ismob(a)

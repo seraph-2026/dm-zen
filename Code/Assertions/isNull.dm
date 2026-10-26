@@ -5,7 +5,8 @@
 zen_assertion/isNull
 	assertType = "isNull"
 	params = 1
-
+	aName = "Input"
+	
 	result(var/a)
 		return isnull(a)
 

@@ -5,6 +5,7 @@
 zen_assertion/isText
 	assertType = "isText"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return istext(a)

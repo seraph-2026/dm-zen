@@ -5,6 +5,7 @@
 zen_assertion/isInf
 	assertType = "isInf"
 	params = 1
+	aName = "Input"
 
 	result(var/a)
 		return isinf(a)
