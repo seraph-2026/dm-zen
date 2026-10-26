@@ -17,20 +17,14 @@ zen
 		test() // Overriden by /zen children
 		
 		/** 
-		 * Discovers and runs all the tests in this project automatically
+		 * Executes all, one or a list of tests.
 		 * 
-		 * If the parameter outputContainer is specified, test results 
-		 * will be piped to the container like so.
+		 * The first parameter outputContainer will recieved the test results << piped to it
 		 * 
-		 *     outputContainer << results
-		 * 
-		 * If you want to control the presentation of the test results 
-		 * yourself. Then you can use the return results of this proc.
-		 * 
-		 * The return value is a /list of /zen/\<test\> datums with .testResults
+		 * The second parameter is the name of the specific test to run or a list of tests
 		 * 
 		 */
-		exec(var/outputContainer)
+		exec(var/outputContainer, var/testNameOrList)
 
 			src.outputContainer = outputContainer
 
