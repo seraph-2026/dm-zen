@@ -9,9 +9,9 @@ zen_assertion/isNan
 		return isnan(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is NaN
  */
-zen/proc/assertIsNan(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isNan(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsNan(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isNan(description, a)
+	thisAssertion.exec(description, a)
 		

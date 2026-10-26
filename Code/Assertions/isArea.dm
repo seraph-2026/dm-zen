@@ -9,9 +9,9 @@ zen_assertion/isArea
 		return isarea(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a is an /area
  */
-zen/proc/assertIsArea(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isArea(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsArea(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isArea(description, a)
+	thisAssertion.exec(description, a)
 		

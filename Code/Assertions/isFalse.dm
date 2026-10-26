@@ -2,16 +2,16 @@
 /**
  * Raw assertion logic
  */
-zen_assertion/
-	assertType = ""
+zen_assertion/isFalse
+	assertType = "isFalse"
 
-	result(var/a, var/b)
-		return a == b
+	result(var/a)
+		return a == 0
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a == 0
  */
-zen/proc/assert(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assert(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/(description, a)
+	thisAssertion.exec(description, a)
 		

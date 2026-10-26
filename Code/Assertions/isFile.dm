@@ -9,9 +9,9 @@ zen_assertion/isFile
 		return isfile(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a is a file ('fileName.extension')
  */
-zen/proc/assertIsFile(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isFile(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsFile(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isFile(description, a)
+	thisAssertion.exec(description, a)
 		

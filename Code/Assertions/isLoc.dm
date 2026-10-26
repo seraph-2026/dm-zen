@@ -9,9 +9,9 @@ zen_assertion/isLoc
 		return isloc(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is a loc
  */
-zen/proc/assertIsLoc(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isLoc(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsLoc(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isLoc(description, a)
+	thisAssertion.exec(description, a)
 		

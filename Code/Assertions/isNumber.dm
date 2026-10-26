@@ -5,13 +5,13 @@
 zen_assertion/isNumber
 	assertType = "isNumber"
 
-	result(var/a, var/b)
-		return a == b
+	result(var/a)
+		return isnum(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is a number
  */
-zen/proc/assertIsNumber(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isNumber(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsNumber(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isNumber(description, a)
+	thisAssertion.exec(description, a)
 		

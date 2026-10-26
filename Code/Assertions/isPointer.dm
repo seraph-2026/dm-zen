@@ -9,9 +9,9 @@ zen_assertion/isPointer
 		return ispointer(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is a pointer
  */
-zen/proc/assertIsPointer(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isPointer(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsPointer(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isPointer(description, a)
+	thisAssertion.exec(description, a)
 		

@@ -9,7 +9,7 @@ zen_assertion/isNull
 		return isnull(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is null
  */
 zen/proc/assertIsNull(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isNull(description, a, b)

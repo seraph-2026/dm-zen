@@ -12,8 +12,11 @@ zen_utils
 
 			// For all children types of /zen
 			for(var/type in typesof(/zen))
-				if(type != zenInstance.type) 
-					allTests += new type()
+				if(type != zenInstance.type)
+					var/zen/test = new type()
+					// Refuse to return hidden tests
+					if(!test.hidden)
+						allTests += new type()
 			
 			return allTests
 		

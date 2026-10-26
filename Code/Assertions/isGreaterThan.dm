@@ -9,7 +9,7 @@ zen_assertion/isGreaterThan
 		return a > b
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a > b
  */
 zen/proc/assertIsGreaterThan(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isGreaterThan(description, a, b)

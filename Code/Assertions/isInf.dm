@@ -9,9 +9,9 @@ zen_assertion/isInf
 		return isinf(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a is inf
  */
-zen/proc/assertIsInf(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isInf(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsInf(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isInf(description, a)
+	thisAssertion.exec(description, a)
 		

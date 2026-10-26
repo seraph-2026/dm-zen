@@ -9,7 +9,7 @@ zen_assertion/listStartsWith
 		return a[1] == b
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts list a starts with b
  */
 zen/proc/assertListStartsWith(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/listStartsWith(description, a, b)

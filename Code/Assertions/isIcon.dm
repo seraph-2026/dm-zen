@@ -9,9 +9,9 @@ zen_assertion/isIcon
 		return isicon(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts that a is an /icon
  */
-zen/proc/assertIsIcon(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isIcon(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsIcon(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isIcon(description, a)
+	thisAssertion.exec(description, a)
 		

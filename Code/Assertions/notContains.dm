@@ -5,11 +5,11 @@
 zen_assertion/listNotContains
 	assertType = "listNotContains"
 
-	result(var/a, var/b)
-		return a == b
+	result(var/list/a, var/b)
+		return !a.Find(b)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts list a does not contain b
  */
 zen/proc/assertListNotContains(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/listNotContains(description, a, b)

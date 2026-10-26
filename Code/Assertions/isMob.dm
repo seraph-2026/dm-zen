@@ -9,7 +9,7 @@ zen_assertion/isMob
 		return ismob(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is a /mob
  */
 zen/proc/assertIsMob(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isMob(description, a, b)

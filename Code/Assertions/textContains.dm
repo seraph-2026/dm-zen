@@ -9,7 +9,7 @@ zen_assertion/textContains
 		return findtext(a, b)
 
 /**
- * Publicly accessible way to run the assertion
+ * Assert text a contains b
  */
 zen/proc/assertTextContains(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/textContains(description, a, b)

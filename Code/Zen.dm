@@ -12,6 +12,7 @@ zen
 		zen/currentRunningTest // Keeping track of this gives assertions their context
 		zen_results/testResults = new/zen_results() // Contains the result of children /zen/tests. Primarily assertions
 		outputContainer // What results will be << piped to
+		hidden = 0 // This allows a test to hide from the auto discovery
 
 	proc
 		test() // Overriden by /zen children

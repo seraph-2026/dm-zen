@@ -9,7 +9,7 @@ zen_assertion/listEndsWith
 		return a[a.len] == b
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts list a ends with b
  */
 zen/proc/assertListEndsWith(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/listEndsWith(description, a, b)

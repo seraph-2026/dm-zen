@@ -9,9 +9,9 @@ zen_assertion/isTrue
 		return a == 1
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is 1
  */
-zen/proc/assertIsTrue(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isTrue(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsTrue(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isTrue(description, a)
+	thisAssertion.exec(description, a)
 		

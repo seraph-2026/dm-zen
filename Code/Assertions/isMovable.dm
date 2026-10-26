@@ -9,9 +9,9 @@ zen_assertion/isMovable
 		return ismovable(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is /movable
  */
-zen/proc/assertIsMovable(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isMovable(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsMovable(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isMovable(description, a)
+	thisAssertion.exec(description, a)
 		

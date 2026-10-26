@@ -9,7 +9,7 @@ zen_assertion/isNotEquals
 		return a != b
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a != b
  */
 zen/proc/assertIsNotEquals(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isNotEquals(description, a, b)

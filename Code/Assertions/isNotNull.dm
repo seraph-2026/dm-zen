@@ -9,9 +9,9 @@ zen_assertion/isNotNull
 		return !isnull(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is not null
  */
-zen/proc/assertIsNotNull(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isNotNull(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsNotNull(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isNotNull(description, a)
+	thisAssertion.exec(description, a)
 		

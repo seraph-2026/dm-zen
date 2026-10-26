@@ -9,9 +9,9 @@ zen_assertion/isObj
 		return isobj(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is /obj
  */
-zen/proc/assertIsObj(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isObj(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsObj(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isObj(description, a)
+	thisAssertion.exec(description, a)
 		

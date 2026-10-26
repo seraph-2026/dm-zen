@@ -9,7 +9,7 @@ zen_assertion/listContains
 		return a.Find(b)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts list a contains b
  */
 zen/proc/assertListContains(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/listContains(description, a, b)

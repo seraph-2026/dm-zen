@@ -9,9 +9,9 @@ zen_assertion/isText
 		return istext(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is text
  */
-zen/proc/assertIsText(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isText(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsText(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isText(description, a)
+	thisAssertion.exec(description, a)
 		

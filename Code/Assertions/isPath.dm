@@ -9,9 +9,9 @@ zen_assertion/isPath
 		return ispath(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is a path
  */
-zen/proc/assertIsPath(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isPath(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsPath(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isPath(description, a)
+	thisAssertion.exec(description, a)
 		

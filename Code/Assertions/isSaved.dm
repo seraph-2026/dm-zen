@@ -9,9 +9,9 @@ zen_assertion/isSaved
 		return issaved(a)
 
 /**
- * Publicly accessible way to run the assertion
+ * Asserts a is saved
  */
-zen/proc/assertIsSaved(var/description, var/a, var/b)
-	var/zen_assertion/thisAssertion = new/zen_assertion/isSaved(description, a, b)
-	thisAssertion.exec(description, a, b)
+zen/proc/assertIsSaved(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isSaved(description, a)
+	thisAssertion.exec(description, a)
 		

@@ -6,8 +6,8 @@ zen_assertion/textStartsWith
 	assertType = "startsWith"
 
 	result(var/a, var/b)
-		var/foundText = findtext(a, b, 1, 2)
-		return foundText ? 1 : 0
+		return copytext(a, 1, length(b)) == b
+
 
 /**
  * Publicly accessible way to run the assertion
