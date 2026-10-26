@@ -4,6 +4,7 @@
  */
 zen_assertion/isPath
 	assertType = "isPath"
+	params = 1
 
 	result(var/a)
 		return ispath(a)

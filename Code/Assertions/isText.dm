@@ -4,6 +4,7 @@
  */
 zen_assertion/isText
 	assertType = "isText"
+	params = 1
 
 	result(var/a)
 		return istext(a)

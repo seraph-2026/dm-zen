@@ -55,6 +55,7 @@
 #include "Code\Assertions\textEndsWith.dm"
 #include "Code\Assertions\textStartsWith.dm"
 #include "Code\Tests\Assertion.dm"
+#include "Code\Tests\Mock.dm"
 #include "Demo\Demo.dm"
 #include "Demo\Types\Person.dm"
 #include "Demo\Types\PersonMock.dm"

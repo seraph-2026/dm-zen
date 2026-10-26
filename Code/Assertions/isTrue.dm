@@ -4,6 +4,7 @@
  */
 zen_assertion/isTrue
 	assertType = "isTrue"
+	params = 1
 
 	result(var/a)
 		return a == 1

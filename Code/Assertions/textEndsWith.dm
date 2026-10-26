@@ -4,6 +4,7 @@
  */
 zen_assertion/textEndsWith
 	assertType = "textEndsWith"
+	params = 2
 
 	result(var/a, var/b)
 		return copytext(a, length(a) - length(b)) == b

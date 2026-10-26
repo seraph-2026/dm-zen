@@ -4,6 +4,7 @@
  * Capable of making an assertion and storing the result
  */
 zen_assertion
+	var/params = 2
 
 	/**
 	 * Description: Describes what this assert is checking in human readible terms

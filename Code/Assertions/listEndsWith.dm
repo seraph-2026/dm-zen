@@ -4,6 +4,7 @@
  */
 zen_assertion/listEndsWith
 	assertType = "listEndsWith"
+	params = 2
 
 	result(var/list/a, var/b)
 		return a[a.len] == b

@@ -35,9 +35,13 @@ zen_results
 			
 			// If asssertion failed print debugging
 			if(!assertion.result)
-				outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
-				outputString += "\t\t<b>Expected</b>\n\t\t\t[assertion.paramB]\n"
-				outputString += "\t\t<b>Got</b>\n\t\t\t[assertion.paramA]"
+				if(assertion.params == 2)
+					outputString += "\t\t<b>A</b>\n\t\t\t[assertion.paramA]\n"
+					outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
+					outputString += "\t\t<b>B</b>\n\t\t\t[assertion.paramB]\n"
+				if(assertion.params == 1)
+					outputString += "\t\t<b>A</b>\n\t\t\t[assertion.paramA]\n"
+					outputString += "\t\t<b>Type</b>\n\t\t\t[assertion.assertType]\n"
 		
 		return outputString
 

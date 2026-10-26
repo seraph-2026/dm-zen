@@ -4,6 +4,7 @@
  */
 zen_assertion/textStartsWith
 	assertType = "startsWith"
+	params = 2
 
 	result(var/a, var/b)
 		return copytext(a, 1, length(b)) == b

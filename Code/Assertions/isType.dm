@@ -4,6 +4,7 @@
  */
 zen_assertion/isType
 	assertType = "isType"
+	params = 2
 
 	result(var/a, var/b)
 		return istype(a, b)

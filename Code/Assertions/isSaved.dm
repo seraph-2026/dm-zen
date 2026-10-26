@@ -4,6 +4,7 @@
  */
 zen_assertion/isSaved
 	assertType = "isSaved"
+	params = 1
 
 	result(var/a)
 		return issaved(a)

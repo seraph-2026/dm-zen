@@ -4,6 +4,7 @@
  */
 zen_assertion/isGreaterThanOrEquals
 	assertType = "isGreaterThanOrEquals"
+	params = 2
 
 	result(var/a, var/b)
 		return a >= b

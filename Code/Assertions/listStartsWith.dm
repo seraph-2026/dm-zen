@@ -4,6 +4,7 @@
  */
 zen_assertion/listStartsWith
 	assertType = "startsWith"
+	params = 2
 
 	result(var/list/a, var/b)
 		return a[1] == b

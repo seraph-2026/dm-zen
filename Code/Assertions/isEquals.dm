@@ -4,6 +4,7 @@
  */
 zen_assertion/isEquals
 	assertType = "isEquals"
+	params = 2
 
 	result(var/a, var/b)
 		return a == b

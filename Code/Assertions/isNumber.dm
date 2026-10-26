@@ -4,6 +4,7 @@
  */
 zen_assertion/isNumber
 	assertType = "isNumber"
+	params = 1
 
 	result(var/a)
 		return isnum(a)

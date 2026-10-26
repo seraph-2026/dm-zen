@@ -4,6 +4,7 @@
  */
 zen_assertion/isList
 	assertType = "isList"
+	params = 1
 
 	result(var/a)
 		return islist(a)

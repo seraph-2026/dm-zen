@@ -4,6 +4,7 @@
  */
 zen_assertion/isArea
 	assertType = "isArea"
+	params = 1
 
 	result(var/a)
 		return isarea(a)

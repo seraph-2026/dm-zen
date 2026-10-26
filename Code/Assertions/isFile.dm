@@ -4,6 +4,7 @@
  */
 zen_assertion/isFile
 	assertType = "isFile"
+	params = 1
 
 	result(var/a)
 		return isfile(a)

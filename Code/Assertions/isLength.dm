@@ -4,6 +4,7 @@
  */
 zen_assertion/isLength
 	assertType = "isLength"
+	params = 2
 
 	result(var/a, var/b)
 		return length(a) == b

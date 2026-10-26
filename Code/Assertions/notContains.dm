@@ -4,6 +4,7 @@
  */
 zen_assertion/listNotContains
 	assertType = "listNotContains"
+	params = 2
 
 	result(var/list/a, var/b)
 		return !a.Find(b)

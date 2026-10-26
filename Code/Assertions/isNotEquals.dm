@@ -4,6 +4,7 @@
  */
 zen_assertion/isNotEquals
 	assertType = "isNotEquals"
+	params = 2
 
 	result(var/a, var/b)
 		return a != b

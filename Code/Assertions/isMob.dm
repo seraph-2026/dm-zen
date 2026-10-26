@@ -4,6 +4,7 @@
  */
 zen_assertion/isMob
 	assertType = "isMob"
+	params = 1
 
 	result(var/a)
 		return ismob(a)
