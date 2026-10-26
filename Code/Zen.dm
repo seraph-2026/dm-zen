@@ -42,10 +42,11 @@ zen
 			else
 				// No parameters - Run all tests
 				testsToRun += zen_utils.getAllTests(src)
-			
-			// Run tests
-			zen_utils.runTests(zen, testsToRun)
-			
+
+			if(testsToRun.len > 0)
+				// Run tests
+				zen_utils.runTests(zen, testsToRun)
+				
 			// Allows users to control the presentation of the test results manually
 			return testsToRun
 		

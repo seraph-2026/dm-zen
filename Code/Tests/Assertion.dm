@@ -1,5 +1,5 @@
 zen/assertion_tests
-	hidden = 0
+	hidden = 1
 
 	/**
 	 * Test all the assertions that zen supports

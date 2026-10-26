@@ -119,9 +119,9 @@ zen_utils
 				totalFailedAssertions += test.testResults.failedAssertions.len
 				totalExceptions += test.testResults.exceptions.len
 
-
 			// Overall pass and totals
 			var/pass = 1
+			var/totalTime = 0
 
 			var/list/passedTests = list()
 			var/list/failedTests = list()
@@ -133,18 +133,22 @@ zen_utils
 					pass = 0
 				else
 					passedTests += test
+				
+				totalTime += test.testResults.time
 
 			// Detailed summary failed tests
-			resultsText += "[ZEN_RED_CROSS]<b>Tests Issues</b>\n\n"
+			if(failedTests.len >0)
+				resultsText += "[ZEN_RED_CROSS]<b>Tests Issues</b>\n\n"
 
-			for(var/zen/test in failedTests)
-				resultsText += "<b>Test</b> [copytext("[test.type]", 6)]\n"
-				resultsText += test.testResults.toString(noPassed = 1)
+				for(var/zen/test in failedTests)
+					resultsText += "<b>Test</b> [copytext("[test.type]", 6)]\n"
+					resultsText += test.testResults.toString(noPassed = 1)
 
-			resultsText += ZEN_HR
+				resultsText += ZEN_HR
 
 			var/passOrFail = pass ? ZEN_PASS : ZEN_FAIL
-			resultsText += "\n<b>Overall Test Result</b> - [passOrFail]\n"
+			resultsText += "<b>Overall Test Result</b> - [passOrFail]\n"
+			resultsText += "\nCompleted in [totalTime * 10]s\n"
 
 			resultsText += "\n<b>Tests</b>\n"
 			
@@ -158,7 +162,9 @@ zen_utils
 			// Summary assertions
 			resultsText += "\n<b>Assertions</b>\n"
 			resultsText += "\t[ZEN_GREEN_TICK] [totalPassedAssertions] passed\n"
-			resultsText += "\t[ZEN_RED_CROSS] [totalFailedAssertions] failed\n"
+			
+			if(totalFailedAssertions > 0)
+				resultsText += "\t[ZEN_RED_CROSS] [totalFailedAssertions] failed\n"
 			
 			if(totalExceptions > 0)
 				resultsText += "\n<b>Exceptions</b>\n"
