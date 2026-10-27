@@ -1,0 +1,20 @@
+
+/**
+ * Raw assertion logic
+ */
+zen_assertion/isType
+	assertType = "isType"
+	params = 2
+	aName = "Input"
+	bName = "Value"
+
+	result(var/a, var/b)
+		return istype(a, b)
+
+/**
+ * Asserts a is type b
+ */
+zen/proc/assertIsType(var/description, var/a, var/b)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isType(description, a, b)
+	thisAssertion.exec(description, a, b)
+		

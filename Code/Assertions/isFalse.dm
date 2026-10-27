@@ -14,7 +14,6 @@ zen_assertion/isFalse
 /**
  * Asserts that a == 0
  */
-zen/proc/assert(var/description, var/a)
-	var/zen_assertion/thisAssertion = new/zen_assertion/(description, a)
+zen/proc/assertIsFalse(var/description, var/a)
+	var/zen_assertion/thisAssertion = new/zen_assertion/isFalse(description, a)
 	thisAssertion.exec(description, a)
-		

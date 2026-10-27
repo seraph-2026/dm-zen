@@ -16,12 +16,13 @@
 // BEGIN_INCLUDE
 #include "Code\Mock.dm"
 #include "Code\Zen.dm"
-#include "Code\ZenOutput.dm"
 #include "Code\ZenAssertion.dm"
+#include "Code\ZenOutput.dm"
 #include "Code\ZenResults.dm"
 #include "Code\ZenUtils.dm"
 #include "Code\Assertions\isArea.dm"
 #include "Code\Assertions\isEquals.dm"
+#include "Code\Assertions\isFalse.dm"
 #include "Code\Assertions\isFile.dm"
 #include "Code\Assertions\isGreaterThan.dm"
 #include "Code\Assertions\isGreaterThanOrEquals.dm"
@@ -55,10 +56,11 @@
 #include "Code\Assertions\textEndsWith.dm"
 #include "Code\Assertions\textStartsWith.dm"
 #include "Code\Tests\Assertion.dm"
-#include "Code\Tests\Mock.dm"
-#include "Demo\Demo.dm"
+#ifdef __MAIN__ // BEGIN_DEMO
+#include "Demo\Tests\Person.dm"
+#include "Demo\Mocks\Person.dm"
 #include "Demo\Types\Person.dm"
-#include "Demo\Types\PersonMock.dm"
-#include "Demo\Types\PersonTest.dm"
+#include "Demo\Demo.dm"
+#endif          // END_DEMO
 // END_INCLUDE
 

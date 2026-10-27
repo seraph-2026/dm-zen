@@ -6,6 +6,7 @@ zen/assertion_tests
 	 */
 	test()
 		zen.assertEquals("equals 1 1", 1, 1)
+		zen.assertIsFalse("isFalse 0", 0)
 		zen.assertIsArea("isArea new/area()", new/area())
 		zen.assertIsFile("isFile 'Code/zen.dm'", 'Code/zen.dm')
 		zen.assertIsGreaterThan("isGreaterThan 2 1", 2, 1)
@@ -25,7 +26,7 @@ zen/assertion_tests
 		zen.assertIsMovable("isMovable new/mob()", new/mob())
 		zen.assertIsMovable("isMovable new/obj()", new/obj())
 
-		var/nan = json_decode("NaN")			
+		var/nan = json_decode("NaN")
 		zen.assertIsNan("isNan 0 / 0", nan)
 
 		zen.assertIsNotEquals("isNotEquals 1 2", 1, 2)
