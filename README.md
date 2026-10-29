@@ -9,8 +9,8 @@ zen/person/test()
 
     var/person/lisa = zen.mock(/mock/person/Lisa)
 
-    zen.assertEquals(
-    	"Lisa's description prints accurately",,
+    zen.assertIsEquals(
+    	"Lisa's description prints accurately",
     	lisa.description(),
     	"name: lisa, age: 35"
     )

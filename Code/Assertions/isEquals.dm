@@ -13,7 +13,7 @@ zen_assertion/isEquals
 /**
  * Asserts that a == b
  */
-zen/proc/assertEquals(var/description, var/a, var/b)
+zen/proc/assertIsEquals(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isEquals(description, a, b)
 	thisAssertion.exec(description, a, b)
 		
