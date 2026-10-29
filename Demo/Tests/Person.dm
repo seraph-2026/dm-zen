@@ -5,7 +5,7 @@ zen/person/test()
 	var/person/lisa = zen.mock(/mock/person/Lisa)
 
 	zen.assertEquals(
-		"person.description() prints accurately",
+		"Lisa's description prints accurately",
 		lisa.description(),
 		"name: lisa, age: 35"
 	)
@@ -16,7 +16,7 @@ zen/person_fail/test()
 	var/person/lisa = zen.mock(/mock/person/Lisa)
 
 	zen.assertEquals(
-		"person.description() prints accurately",
+		"Expected failure. Lisa's description won't print accurately",
 		lisa.description(),
 		"name: lisa, age: 25"
 	)
@@ -25,7 +25,7 @@ zen/person_fail/test()
 zen/person_exception/test()
 
 	zen.assertEquals(
-		"person.description() prints accurately",
+		"Expected exception. Lisa's description will have an exception",
 		list(1)[2],
 		"name: lisa, age: 25"
 	)
