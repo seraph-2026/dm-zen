@@ -11,9 +11,8 @@ zen_assertion/textStartsWith
 	result(var/a, var/b)
 		return copytext(a, 1, length(b) + 1) == b
 
-
 /**
- * Publicly accessible way to run the assertion
+ * Asserts text a does starts with text b
  */
 zen/proc/assertTextStartsWith(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/textStartsWith(description, a, b)

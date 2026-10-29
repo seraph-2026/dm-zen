@@ -11,7 +11,7 @@ zen_assertion/isLength
 		return length(a) == b
 
 /**
- * Asserts that a is length b
+ * Asserts that a (text or list) is length b
  */
 zen/proc/assertIsLength(var/description, var/a, var/b)
 	var/zen_assertion/thisAssertion = new/zen_assertion/isLength(description, a, b)
